@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EnsaAbscence.Absences"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout  Margin="50,0,50,150" > 
+            <Grid>
+                <Picker x:Name="Gender" Title="Choose" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="8" Margin="10,0,10,0" >
+                    <Picker.Items>
+                        <x:String>eren</x:String>
+                        <x:String>mikasa</x:String>
+                        <x:String>armin</x:String>
+                    </Picker.Items>
+                </Picker>
+                <ScrollView Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                    <StackLayout x:Name="checkBoxContainer"  VerticalOptions="Start">
+
+                    </StackLayout>
+
+                </ScrollView>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

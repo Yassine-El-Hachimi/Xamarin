@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EnsaAbscence"
+             xmlns:custom="clr-namespace:EnsaAbscence;assembly:EnsaAbscence"
+             x:Class="EnsaAbscence.MainPage"
+             BackgroundImage="Backgr1.png"
+             NavigationPage.HasNavigationBar="false">
+
+
+    <StackLayout x:Name="mainContent"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+        <Image x:Name="logoEnsa" Source="ENSALOGO.png"  Scale="1.5" Margin="300,10,0,0"></Image>
+        <Label x:Name="bigTitle" Text="Sign in" FontSize="40" Opacity="1" TextColor="White" Margin="50,120,0,0" FontFamily="Ruda-Regular.ttf#Ruda-Regular"></Label>
+        
+        <local:myEntry x:Name="nomEtry"  Placeholder="Nom" FontSize="14" TextColor="Black" PlaceholderColor="Black" Margin="25,150,25,0" Opacity="0.2"></local:myEntry>
+        <local:myEntry x:Name="passwordEntry" Placeholder="password" IsPassword="True" FontSize="14" TextColor="Black" PlaceholderColor="Black" Margin="25,15,25,0" Opacity="0.2"></local:myEntry>
+        
+        <ImageButton x:Name="submitButton" Source="Valider.png" Margin="300,0,20,0"  ></ImageButton>
+        <Button x:Name="inscription" Text="Sign up"  HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" TextColor="Black" BackgroundColor="Transparent" BorderWidth="0" Clicked="NavigateButton_OnClicked"></Button>
+       
+    </StackLayout>
+
+</ContentPage>

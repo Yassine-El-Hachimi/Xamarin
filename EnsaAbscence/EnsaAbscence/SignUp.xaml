@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EnsaAbscence"
+             x:Class="EnsaAbscence.Page1"
+             BackgroundImage="bckgr2.png"
+              NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <ImageButton Source="backButton.png" BackgroundColor="Transparent"  HorizontalOptions="StartAndExpand" Margin="5,10,0,0" Clicked="backButton_OnClicked"></ImageButton>
+            <StackLayout Margin="30,40,0,0">
+                <Label Text="Create" FontSize="48" Opacity="1" TextColor="White" FontFamily="Ruda-Regular.ttf#Ruda-Regular"></Label>
+                <StackLayout Padding="0,-30,0,0">
+                    <Label Text="Account" FontSize="48" Opacity="1" TextColor="White"></Label>
+                </StackLayout>
+            </StackLayout>
+            <local:myEntryWhite x:Name="nomEntry" Placeholder="Nom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,30,25,0" Opacity="0.6" ></local:myEntryWhite>
+            <local:myEntryWhite x:Name="prenomEntry" Placeholder="Prenom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,15,25,0" Opacity="0.6"></local:myEntryWhite>
+            <local:myEntryWhite x:Name="passwordEntry" Placeholder="password" IsPassword="True" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,15,25,0" Opacity="0.6"></local:myEntryWhite>
+            <ImageButton x:Name="SignUpButton" Source="Valider.png" Margin="300,30,20,0" Clicked="ImageButton_Clicked" ></ImageButton>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
