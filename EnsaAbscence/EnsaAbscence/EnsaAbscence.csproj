@@ -22,19 +22,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="SignUp.xaml.cs">
+    <Compile Update="Vues\SignUp.xaml.cs">
       <DependentUpon>SignUp.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Absences.xaml">
+    <EmbeddedResource Update="Vues\Absences.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Navigation.xaml">
+    <EmbeddedResource Update="Vues\Navigation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SignUp.xaml">
+    <EmbeddedResource Update="Vues\SignUp.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
