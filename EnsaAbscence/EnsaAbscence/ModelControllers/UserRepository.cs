@@ -1,6 +1,7 @@
 ﻿using EnsaAbscence.Models;
 using SQLite;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,39 +11,51 @@ namespace EnsaAbscence.ModelControllers
 
     public class UserRepository
     {
-       public  static  SQLiteAsyncConnection con;
+       public SQLiteConnection con;
+       string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "GestionAbsences.db3");
         // creation de la table user
-        public UserRepository(string dbPath)
+        public UserRepository()
         {
-            con = new SQLiteAsyncConnection(dbPath);
-            con.CreateTableAsync<Proffesseur>();
+            con = new SQLiteConnection(dbPath);
+            con.CreateTable<Proffesseur>();
         }
 
         // methode pour afficher les professeur 
-        public Task<List<Proffesseur>> GetProffesseurAsync()
+        public List<Proffesseur> GetProffesseurAsync()
         {
-            return con.Table<Proffesseur>().ToListAsync();
+            return con.Table<Proffesseur>().ToList();
         }
-        
 
+        // verifier le login d'un utilsateur(prof)
+        public  Proffesseur VerfierLog(Proffesseur pr)
+        { 
+            TableQuery<Proffesseur> tableQuery = con.Table<Proffesseur>();
+            Proffesseur prof = tableQuery.Where(i => i.Nom == pr.Nom && i.Pass == pr.Pass).FirstOrDefault();
+            if (prof != null)
+            {
+                return prof;
+            }
+
+            return null;
+        }
 
         // pour ajouter ou modifier un proffesseur 
-        public Task<int> SaveProffesseurAsync(Proffesseur pr)
+        public int SaveProffesseur(Proffesseur pr)
         {
             if (pr.id != 0){
-                return con.UpdateAsync(pr);
+                return con.Update(pr);
             }
             else{
-                return con.InsertAsync(pr);
+                return con.Insert(pr);
             }
         }
 
      
         // pour supprimer un proffesseur
 
-        public Task<int> DeleteProffesseurAsync(Proffesseur pr)
+        public int DeleteProffesseur(Proffesseur pr)
         {
-            return con.DeleteAsync(pr);
+            return con.Delete(pr);
         }
     }
 }

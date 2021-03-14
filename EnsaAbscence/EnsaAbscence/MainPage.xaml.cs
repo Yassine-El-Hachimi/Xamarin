@@ -13,34 +13,31 @@ namespace EnsaAbscence
 {
     public partial class MainPage : ContentPage
     {
-       
+        UserRepository usr;
         public MainPage()
         {
+            usr= new UserRepository();
             InitializeComponent();
             submitButton.Clicked += SubmitButton_Clicked;
         }
 
         private async void SubmitButton_Clicked(object sender, EventArgs e)
         {
-            var login = false;
+            Proffesseur pr = new Proffesseur();
             Proffesseur ouarrachi = new Proffesseur()
             {
                 Nom = nomEtry.Text,
                 Pass = passwordEntry.Text
             };
 
-            var ProfListe = UserRepository.con.Table<Proffesseur>().Where(i => i.Nom.Equals(ouarrachi.Nom) && i.Pass.Equals(ouarrachi.Pass));       
-                if(ProfListe!=null)
-                {
-                    login = true;
-                }
-            
-            if (login) {await DisplayAlert(null, "bien authentifié", "ok"); }
+            pr=usr.VerfierLog(ouarrachi);
+            if (pr!=null) {await DisplayAlert(null, "bien authentifié", "ok"); }
             else
             {
                 await DisplayAlert(null, "Black hacker", "ok");
             }
         }
+       
 
         private async void NavigateButton_OnClicked(object sender, EventArgs e)
         {

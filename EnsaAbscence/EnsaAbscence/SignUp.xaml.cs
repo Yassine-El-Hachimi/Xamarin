@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EnsaAbscence.ModelControllers;
 using EnsaAbscence.Models;
 using SQLite;
 using Xamarin.Forms;
@@ -13,10 +14,11 @@ namespace EnsaAbscence
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Page1 : ContentPage
 	{
-     
-		public Page1 ()
+        UserRepository usr;
+        public Page1 ()
 		{
-			InitializeComponent ();
+            usr = new UserRepository();
+            InitializeComponent ();
             SignUpButton.Clicked += SignUpButton_Clicked;
 		}
 
@@ -29,8 +31,36 @@ namespace EnsaAbscence
                 Prenom = prenomEntry.Text,
                 Pass = passwordEntry.Text
             };
-            await App.Usr.SaveProffesseurAsync(prof);
-            await DisplayAlert(null, prof.Nom+ " bien enregistre", "ok");
+            if (!String.IsNullOrEmpty(prof.Nom) && prof.Nom.Length >= 3) //
+            {
+                if (!String.IsNullOrEmpty(prof.Prenom) && prof.Prenom.Length >= 3)
+                {
+                    if (!String.IsNullOrWhiteSpace(prof.Pass) && prof.Pass.Length >4)
+                    {
+                            usr.SaveProffesseur(prof);
+                            await DisplayAlert(null, prof.Nom + " bien enregistre", "ok");
+                        //direction sur la bonne page
+
+                    }
+                    else
+                    {
+                        await DisplayAlert("Erreur de saisie", "le password doit avoir plus de 3 caracteres", "OK");
+                    }
+
+                }
+                else
+                {
+                    await DisplayAlert("Erreur de saisie", "le prenom doit avoir plus de 2 caracteres", "OK");
+                }
+
+            }
+            else
+            {
+                await DisplayAlert("Erreur de saisie", "le nom doit avoir plus de 2 caracteres", "OK");
+                
+            }
+           
+            
         
         }
 
