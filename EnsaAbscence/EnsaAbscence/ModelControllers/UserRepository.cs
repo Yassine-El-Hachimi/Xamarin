@@ -20,11 +20,7 @@ namespace EnsaAbscence.ModelControllers
             con.CreateTable<Proffesseur>();
         }
 
-        // methode pour afficher les professeur 
-        public List<Proffesseur> GetProffesseurAsync()
-        {
-            return con.Table<Proffesseur>().ToList();
-        }
+       
 
         // verifier le login d'un utilsateur(prof)
         public  Proffesseur VerfierLog(Proffesseur pr)
@@ -51,11 +47,5 @@ namespace EnsaAbscence.ModelControllers
         }
 
      
-        // pour supprimer un proffesseur
-
-        public int DeleteProffesseur(Proffesseur pr)
-        {
-            return con.Delete(pr);
-        }
     }
 }

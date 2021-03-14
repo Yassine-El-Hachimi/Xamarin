@@ -22,7 +22,7 @@
             </Grid>
             <Grid Margin="0" Padding="0" HorizontalOptions="Center">
                     <local:NavigationButton x:Name="boutonSearch" Text="    Search     " Image="Loupe.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0"></local:NavigationButton>
-                    <local:NavigationButton x:Name="boutonStudent" Text="Add Student " Image="StudentWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center"  Margin="0" Grid.Column="1" Grid.Row="0"></local:NavigationButton>
+                    <local:NavigationButton x:Name="boutonStudent" Text="Add Student " Image="StudentWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center"  Margin="0" Grid.Column="1" Grid.Row="0" Clicked="boutonStudent_Clicked"></local:NavigationButton>
                    
                 </Grid>
             </StackLayout>
