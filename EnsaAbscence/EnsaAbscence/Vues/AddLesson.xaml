@@ -9,8 +9,7 @@
         <StackLayout>
             <StackLayout Padding="30,50,30,0">
                 <local:myEntry BackgroundColor="Transparent" x:Name="NomModule"  Placeholder="Nom Module..." />
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" SelectedIndexChanged="filiereText_SelectedIndexChanged"
-                        Title="Filière">
+                <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" Title="Filière" SelectedIndexChanged="filiereAnne_SelectedIndexChanged">
                     <Picker.Items>
                         <x:String>Cycle preparatoire</x:String>
                         <x:String>Génie Informatique</x:String>
@@ -22,16 +21,12 @@
                 <Picker BackgroundColor="White" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" >
 
                 </Picker>
-                
-                
-
-                
                 <Button
                         Margin="0,20,0,40"
                         HeightRequest="55"
                         BackgroundColor="#4d4dff"
-                        Clicked="Button_Clicked"
-                        Text="Ajouter Lesson" />
+                       Clicked="Button_Clicked"
+                        Text="Ajouter Leçon" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
