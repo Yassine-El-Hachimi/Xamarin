@@ -9,7 +9,7 @@
     <ContentPage.Content>
         <StackLayout  Margin="50,0,50,150" > 
             
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" SelectedIndexChanged="filiereText_SelectedIndexChanged"
+                <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne"
                         Title="Filière">
                     <Picker.Items>
                         <x:String>Cycle preparatoire</x:String>
@@ -20,10 +20,10 @@
                     </Picker.Items>
                 </Picker>
 
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" SelectedIndexChanged="anneeText_SelectedIndexChanged">
+                <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" SelectedIndexChanged="AnnePicker_SelectedIndexChanged">
 
                 </Picker>
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="LessonPicker" Title="Lesson" IsEnabled="False" >
+                <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="LessonPicker" Title="Lesson" IsEnabled="False" SelectedIndexChanged="LessonPicker_SelectedIndexChanged">
 
                 </Picker>
                 

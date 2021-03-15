@@ -5,7 +5,6 @@ using System.Text;
 
 namespace EnsaAbscence.Models
 {
-   
         public class AddCourse
         {
             [PrimaryKey,AutoIncrement]
