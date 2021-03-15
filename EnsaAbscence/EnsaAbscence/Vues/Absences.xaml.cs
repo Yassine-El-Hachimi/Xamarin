@@ -93,6 +93,7 @@ namespace EnsaAbscence
         {
             var isAbsent = (SwitchCell)sender;
             var student = (Etudiants)isAbsent.BindingContext;
+            var db = new SQLiteConnection(dbPath);
 
             if (isAbsent.On)
             {
@@ -100,6 +101,7 @@ namespace EnsaAbscence
                 {
                     student.NbrAbsence++;
                     EtudiansAbsent.Add(student);
+                    db.Update(student);
                 }
             }
             else
@@ -108,6 +110,7 @@ namespace EnsaAbscence
                 {
                     student.NbrAbsence--;
                     EtudiansAbsent.Remove(student);
+                    db.Update(student);
                 }
             }
         }
