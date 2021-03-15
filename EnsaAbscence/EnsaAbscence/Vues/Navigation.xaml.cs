@@ -24,7 +24,10 @@ namespace EnsaAbscence
         {
             await Navigation.PushAsync(new Absences(),true);
         }
-
+        private async void boutonSearch_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Search(), true);
+        }
         private async void boutonLesson_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AddLesson(), true);

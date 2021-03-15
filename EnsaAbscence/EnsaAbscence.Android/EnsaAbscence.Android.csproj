@@ -69,9 +69,6 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="myEntryRenderer.cs" />
     <Compile Include="myEntryRendererWhite.cs" />
-    <Compile Include="Resources\CustomControls\NavigationButton.xaml.cs">
-      <DependentUpon>NavigationButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,11 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-hdpi\Lesson.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\CustomControls\NavigationButton.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logout.png" />

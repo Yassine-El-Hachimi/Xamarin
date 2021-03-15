@@ -30,5 +30,6 @@ namespace EnsaAbscence.ModelControllers
                 return con.Insert(Et);
             }
         }
+       
     }
 }
