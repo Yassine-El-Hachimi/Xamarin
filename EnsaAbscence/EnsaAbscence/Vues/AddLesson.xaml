@@ -6,7 +6,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Padding="30,50,30,0">
-                <local:myEntry BackgroundColor="Transparent" x:Name="cne" Keyboard="Numeric"  Placeholder="Nom Module..." />
+                <local:myEntry BackgroundColor="Transparent" x:Name="NomModule"  Placeholder="Nom Module..." />
                 <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" SelectedIndexChanged="filiereText_SelectedIndexChanged"
                         Title="Filière">
                     <Picker.Items>

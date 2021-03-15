@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EnsaAbscence.ModelControllers;
+using EnsaAbscence.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,11 +16,11 @@ namespace EnsaAbscence.Vues
 	{
         String filiereSelected;
         int filiereID;
+        ControllerCourse add;
         public AddLesson ()
 		{
-			InitializeComponent ();
-
-
+            add = new ControllerCourse();
+            InitializeComponent ();
         }
         private void filiereText_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -38,7 +40,25 @@ namespace EnsaAbscence.Vues
             }
         }
         private async void Button_Clicked(object sender, EventArgs e)
-        { 
+        {
+
+            if (filiereAnne.SelectedIndex <= 0 || AnnePicker.SelectedIndex <= 0)
+            {
+                await DisplayAlert("Erreur de saisie", "Le cours doit appartenir à une filière et année!", "OK");
+            }
+            else
+            {
+                AddCourse cours = new AddCourse()
+                {
+                    CoursName= NomModule.Text,
+                    CoursFiliere = filiereAnne.SelectedItem.ToString(),
+                    CoursAnnee = AnnePicker.SelectedItem.ToString()
+                };
+                add.SaveCourse(cours);
+                await DisplayAlert(null, " Le cours " + cours.CoursName + " est bien enregistré", "ok");
+                //direction sur la bonne page
+
+            }
 
         }
     }
