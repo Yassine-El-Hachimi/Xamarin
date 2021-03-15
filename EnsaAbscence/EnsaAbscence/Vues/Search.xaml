@@ -22,13 +22,16 @@
             </Picker>
             
             <local:myEntry x:Name="nomEtudiant" Placeholder="Nom Etudiant..." TextChanged="NomEtudiant_TextChanged"></local:myEntry>
-            <ListView x:Name="ListEtudiants" ItemSelected="ListEtudiants_ItemSelected">
+            <ListView x:Name="ListEtudiants" ItemSelected="ListEtudiants_ItemSelected" Margin="0,0,0,0">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <TextCell Text="{Binding details}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <StackLayout x:Name="etudInfos">
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

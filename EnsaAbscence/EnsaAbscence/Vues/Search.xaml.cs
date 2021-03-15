@@ -17,7 +17,6 @@ namespace EnsaAbscence.Vues
 	{
         String filiereSelected;
         String AnneeSelect;
-        StackLayout etudInfos;
         int filiereID;
         List<Etudiants> etudiants;
         List<AddCourse> Module;
@@ -26,7 +25,6 @@ namespace EnsaAbscence.Vues
         public Search ()
 		{
 			InitializeComponent ();
-            etudInfos = new StackLayout();
         }
         private void filiereAnne_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -79,7 +77,6 @@ namespace EnsaAbscence.Vues
             etudInfos.Children.Clear();
             etudInfos.Children.Add( new Label() { Text = "Nombre Absences : " + etud.NbrAbsence.ToString() });
             etudInfos.Children.Add(new Label() { Text = "Nombre Presences : " + etud.NbrPresences.ToString() });
-            mainContent.Children.Add(etudInfos);
         }
     }
     

@@ -27,7 +27,7 @@
 
                 </Picker>
             <Frame BackgroundColor="Transparent" HasShadow="True" Padding="0" Margin="0">
-                <ListView x:Name="FicheAbsence" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" ItemTapped="ViewCell_Tapped">
+                <ListView x:Name="FicheAbsence" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" >
                     <ListView.ItemTemplate>
                         <DataTemplate>      
                             <SwitchCell Text="{Binding details}"/>
