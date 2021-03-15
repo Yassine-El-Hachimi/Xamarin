@@ -11,18 +11,14 @@
             <Image x:Name="imageProfile" Source="ProfileBlack.png" Scale="0.4" Opacity="0.4" HeightRequest="200" WidthRequest="200" ></Image>
             <StackLayout VerticalOptions="FillAndExpand" Margin="50,0,50,150" >
             <Grid Margin="0" Padding="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                    <Picker x:Name="lessonPicker" Title="Choose" HorizontalOptions="FillAndExpand" VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontSize="8" Margin="10,0,10,0">
-                        <Picker.Items>
-                            <x:String>Male</x:String>
-                            <x:String>Female</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    
+                    
                     <local:NavigationButton x:Name="boutonAbsences" Text="  Absences  " Image="ClockWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="1" Clicked="goButton_OnClicked"></local:NavigationButton>
                     <local:NavigationButton x:Name="boutonLessons" Text="Add lesson  " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="1" Grid.Row="1" Clicked="boutonLesson_Clicked"></local:NavigationButton>
                
             </Grid>
             <Grid Margin="0" Padding="0" HorizontalOptions="Center">
-                    <local:NavigationButton x:Name="boutonSearch" Text="    Search     " Image="Loupe.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0"></local:NavigationButton>
+                    <local:NavigationButton x:Name="boutonSearch" Text="    Search     " Image="Loupe.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0" Clicked="boutonSearch_Clicked"></local:NavigationButton>
                     <local:NavigationButton x:Name="boutonStudent" Text="Add Student " Image="StudentWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center"  Margin="0" Grid.Column="1" Grid.Row="0" Clicked="boutonStudent_Clicked"></local:NavigationButton>
                    
                 </Grid>
