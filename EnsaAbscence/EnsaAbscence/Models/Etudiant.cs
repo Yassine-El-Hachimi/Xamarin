@@ -26,7 +26,8 @@ namespace EnsaAbscence.Models
         }
         public override string ToString()
         {
-            return nom + " " + prenom + " " + filier;
+            return nom + " " + prenom;
         }
+
     }
 }

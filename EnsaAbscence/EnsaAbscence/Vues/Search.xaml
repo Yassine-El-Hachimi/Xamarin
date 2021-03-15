@@ -12,12 +12,10 @@
 
             </Picker>
             <local:myEntry x:Name="nomEtudiant" Placeholder="Nom Etudiant..."></local:myEntry>
-            <ListView >
+            <ListView x:Name="ListEtudiants">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell>
-                            
-                        </ViewCell>
+                        <TextCell Text="{Binding .}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

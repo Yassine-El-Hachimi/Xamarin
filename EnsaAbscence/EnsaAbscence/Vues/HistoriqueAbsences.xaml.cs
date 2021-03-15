@@ -10,14 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace EnsaAbscence.Vues
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Search : ContentPage
+	public partial class HistoriqueAbsences : ContentPage
 	{
-        List<Etudiant> etudiants;
-		public Search ()
+		public HistoriqueAbsences ()
 		{
 			InitializeComponent ();
-            etudiants = new List<Etudiant>();
-            ListEtudiants.ItemsSource = etudiants;
-        }
-    }
+		}
+	}
 }

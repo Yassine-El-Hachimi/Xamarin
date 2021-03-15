@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
+             x:Class="EnsaAbscence.Vues.MenuAbsences">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="0" Padding="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+
+
+                <local:NavigationButton x:Name="MarquerAbsences" Text="  Maquer Absences  " Image="ClockWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0" Clicked="marquerAbsc" VerticalOptions="EndAndExpand"></local:NavigationButton>
+                <local:NavigationButton x:Name="HistoriqueABsences" Text="Historique Absences  " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="1" Clicked="HistoriqueAbs"></local:NavigationButton>
+
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

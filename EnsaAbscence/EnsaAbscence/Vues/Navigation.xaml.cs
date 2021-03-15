@@ -22,7 +22,7 @@ namespace EnsaAbscence
         }
         private async void goButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Absences(),true);
+            await Navigation.PushAsync(new MenuAbsences(),true);
         }
         private async void boutonSearch_Clicked(object sender, EventArgs e)
         {

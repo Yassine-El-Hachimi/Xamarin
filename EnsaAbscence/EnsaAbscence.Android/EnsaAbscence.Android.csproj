@@ -165,7 +165,6 @@
     <AndroidResource Include="Resources\drawable\ClockWhite.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mask Group %284%29.png" />
     <AndroidResource Include="Resources\drawable\StudentWhite.png" />
     <AndroidResource Include="Resources\drawable\LessonWhite.png" />
     <AndroidResource Include="Resources\drawable\LessonClass.png" />
