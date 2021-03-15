@@ -22,7 +22,10 @@ namespace EnsaAbscence.Vues
             add = new ControllerCourse();
             InitializeComponent ();
         }
-        private void filiereText_SelectedIndexChanged(object sender, EventArgs e)
+        
+       
+
+        private void filiereAnne_SelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
             filiereID = picker.SelectedIndex;
@@ -38,10 +41,11 @@ namespace EnsaAbscence.Vues
                 case 4: AnnePicker.Items.Add("3 ere annee"); AnnePicker.Items.Add("4 eme annee"); AnnePicker.Items.Add("5 eme annee"); break;
 
             }
+
         }
+
         private async void Button_Clicked(object sender, EventArgs e)
         {
-
             if (filiereAnne.SelectedIndex <= 0 || AnnePicker.SelectedIndex <= 0)
             {
                 await DisplayAlert("Erreur de saisie", "Le cours doit appartenir à une filière et année!", "OK");
@@ -50,7 +54,7 @@ namespace EnsaAbscence.Vues
             {
                 AddCourse cours = new AddCourse()
                 {
-                    CoursName= NomModule.Text,
+                    CoursName = NomModule.Text,
                     CoursFiliere = filiereAnne.SelectedItem.ToString(),
                     CoursAnnee = AnnePicker.SelectedItem.ToString()
                 };
@@ -59,7 +63,6 @@ namespace EnsaAbscence.Vues
                 //direction sur la bonne page
 
             }
-
         }
     }
 
