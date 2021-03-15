@@ -20,7 +20,7 @@ namespace EnsaAbscence.Models
         public int NbrAbsence { get; set; }
         public bool IsAbsent { get; set; }
 
-        public string infoFull
+        public string details
         {
             get { return $"{nom} {prenom}"; }
         }

@@ -30,9 +30,8 @@
                 <ListView x:Name="FicheAbsence" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <SwitchCell Text="{Binding nom}"/>
-
-                        </DataTemplate>
+                        <SwitchCell Text="{Binding details}"/>
+                    </DataTemplate>
                     </ListView.ItemTemplate>
 
                 </ListView>
