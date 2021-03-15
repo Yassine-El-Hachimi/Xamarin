@@ -8,7 +8,7 @@ namespace EnsaAbscence.Models
    
         public class AddCourse
         {
-            [PrimaryKey]
+            [PrimaryKey,AutoIncrement]
             public int id { get; set; }
             public string CoursName { get; set; }
             public string CoursFiliere { get; set; }
