@@ -27,12 +27,8 @@ namespace EnsaAbscence.ModelControllers
         { 
             TableQuery<Proffesseur> tableQuery = con.Table<Proffesseur>();
             Proffesseur prof = tableQuery.Where(i => i.Nom == pr.Nom && i.Pass == pr.Pass).FirstOrDefault();
-            if (prof != null)
-            {
-                return prof;
-            }
 
-            return null;
+            return prof;
         }
 
         // pour ajouter ou modifier un proffesseur 

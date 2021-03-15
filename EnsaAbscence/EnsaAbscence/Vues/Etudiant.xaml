@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnsaAbscence.Vues.Etudiant"
+             xmlns:local="clr-namespace:EnsaAbscence"
              Title="Ajouter un(e) etudiant(e)"
              >
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="MainLayout">
                 <StackLayout Padding="30,50,30,0">
-                    <Entry BackgroundColor="White" x:Name="cne" Keyboard="Numeric"  Placeholder="Entrer le CNE..." />
-                    <Entry BackgroundColor="White" Margin="0,5,0,5" x:Name="prenom" Placeholder="Entrer le prénom..." />
-                    <Entry BackgroundColor="White" Margin="0,5,0,5" x:Name="nom" Placeholder="Entrer le nom..." />
-                    <Entry BackgroundColor="White" Margin="0,5,0,5" x:Name="email" Keyboard="Email" Placeholder="Entrer l'email..." />
-                    <Entry BackgroundColor="White" Margin="0,5,0,5" x:Name="numero" Keyboard="Telephone" Placeholder="Entrer le numéro de téléphone..." />
+                    <local:myEntry BackgroundColor="Transparent" x:Name="cne" Keyboard="Numeric"  Placeholder="Entrer le CNE..." />
+                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="prenom" Placeholder="Entrer le prénom..." />
+                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="nom" Placeholder="Entrer le nom..." />
+                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="email" Keyboard="Email" Placeholder="Entrer l'email..." />
+                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="numero" Keyboard="Telephone" Placeholder="Entrer le numéro de téléphone..." />
                     <Picker BackgroundColor="White" Margin="0,5,0,5"  x:Name="filiereAnne" SelectedIndexChanged="filiereText_SelectedIndexChanged"
                         Title="Filière">
                         <Picker.Items>

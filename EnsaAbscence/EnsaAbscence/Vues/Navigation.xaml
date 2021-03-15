@@ -17,7 +17,7 @@
                         </Picker.Items>
                     </Picker>
                     <local:NavigationButton x:Name="boutonAbsences" Text="  Absences  " Image="ClockWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="1" Clicked="goButton_OnClicked"></local:NavigationButton>
-                    <local:NavigationButton x:Name="boutonLessons" Text="Add lesson  " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="1" Grid.Row="1"></local:NavigationButton>
+                    <local:NavigationButton x:Name="boutonLessons" Text="Add lesson  " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="1" Grid.Row="1" Clicked="boutonLesson_Clicked"></local:NavigationButton>
                
             </Grid>
             <Grid Margin="0" Padding="0" HorizontalOptions="Center">
