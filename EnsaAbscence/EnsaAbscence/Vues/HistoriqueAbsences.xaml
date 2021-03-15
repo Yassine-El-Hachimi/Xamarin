@@ -4,9 +4,15 @@
              x:Class="EnsaAbscence.Vues.HistoriqueAbsences">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="HistoriqueAbs" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <SwitchCell Text=""/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
