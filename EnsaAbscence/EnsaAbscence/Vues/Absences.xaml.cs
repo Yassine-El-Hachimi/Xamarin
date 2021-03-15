@@ -35,7 +35,7 @@ namespace EnsaAbscence
             
                 
 		}
-        private void filiereText_SelectedIndexChanged(object sender, EventArgs e)
+        private void filiereAnne_SelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
             filiereID = picker.SelectedIndex;
@@ -81,5 +81,7 @@ namespace EnsaAbscence
             FicheAbsence.ItemsSource= tableQuery.Where(i => i.filier == filiereSelected && i.Annee == AnneeSelect);
             
         }
+
+       
     }
 }
