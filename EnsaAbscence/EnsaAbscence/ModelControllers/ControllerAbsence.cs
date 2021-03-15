@@ -19,9 +19,11 @@ namespace EnsaAbscence.ModelControllers
             con.CreateTableAsync<Absence>();
         }
 
-        public  Task SaveLectureAsync(Absence Abs)
+        public  Task SaveAbsence(Absence Abs)
         {
             return con.InsertAsync(Abs);
         }
+
+        
     }
 }

@@ -28,7 +28,7 @@ namespace EnsaAbscence.Vues
             filiereID = picker.SelectedIndex;
             filiereSelected = filiereAnne.SelectedItem.ToString();
             AnnePicker.IsEnabled = true;
-            AnnePicker.Items.Clear();    
+            AnnePicker.Items.Clear();  
             switch (filiereID)
             {
                 case 0: AnnePicker.Items.Add("1 ere annee"); AnnePicker.Items.Add("2 eme annee"); break;

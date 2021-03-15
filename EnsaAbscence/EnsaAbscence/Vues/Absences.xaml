@@ -30,13 +30,13 @@
                 <ListView x:Name="FicheAbsence" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                        <SwitchCell Text="{Binding details}"/>
+                        <SwitchCell Text="{Binding details}" OnChanged="SwitchCell_OnChanged"/>
                     </DataTemplate>
                     </ListView.ItemTemplate>
                     
 
                 </ListView>
-            <Button Text="Valider" IsEnabled="False" x:Name="ValidationAbsences"></Button>            
+            <Button Text="Valider" IsEnabled="False" x:Name="ValidationAbsences" Clicked="ValidationAbsences_Clicked"></Button>            
             
         </StackLayout>
     </ContentPage.Content>
