@@ -16,26 +16,27 @@ using XLabs.Forms.Controls;
 
 namespace EnsaAbscence
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Absences : ContentPage
-	{
-        ViewCell lastCell;
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Absences : ContentPage
+    {
         String filiereSelected;
         String AnneeSelect;
         int filiereID;
         List<Etudiants> etudiants;
+        List<Etudiants> EtudiansAbsent;
         List<AddCourse> Module;
         ControllerAbsence Absenc;
         String dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "GestionAbsences.db3");
-        public Absences () 
-		{
+        public Absences()
+        {
             Module = new List<AddCourse>();
             Absenc = new ControllerAbsence();
             etudiants = new List<Etudiants>();
+            EtudiansAbsent = new List<Etudiants>();
             InitializeComponent();
-            
-                
-		}
+
+
+        }
         private void filiereAnne_SelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
@@ -43,7 +44,7 @@ namespace EnsaAbscence
             filiereSelected = filiereAnne.SelectedItem.ToString();
             AnnePicker.Items.Clear();
             AnnePicker.IsEnabled = true;
-            
+
             switch (filiereID)
             {
                 case 0: AnnePicker.Items.Add("1 ere annee"); AnnePicker.Items.Add("2 eme annee"); break;
@@ -58,17 +59,17 @@ namespace EnsaAbscence
         private void AnnePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
-           
+
             filiereSelected = filiereAnne.SelectedItem.ToString();
             AnneeSelect = AnnePicker.SelectedItem.ToString();
-            
+
             LessonPicker.Items.Clear();
             LessonPicker.IsEnabled = true;
-           
+
             var db = new SQLiteConnection(dbPath);
             TableQuery<AddCourse> tableQuery = db.Table<AddCourse>();
-            Module = tableQuery.Where(i =>i.CoursFiliere == filiereSelected && i.CoursAnnee==AnneeSelect).ToList();
-            foreach(var v in Module)
+            Module = tableQuery.Where(i => i.CoursFiliere == filiereSelected && i.CoursAnnee == AnneeSelect).ToList();
+            foreach (var v in Module)
             {
                 LessonPicker.Items.Add(v.CoursName);
             }
@@ -82,20 +83,49 @@ namespace EnsaAbscence
             filiereSelected = filiereAnne.SelectedItem.ToString();
             var db = new SQLiteConnection(dbPath);
             TableQuery<Etudiants> tableQuery = db.Table<Etudiants>();
-            FicheAbsence.ItemsSource= tableQuery.Where(i => i.filier == filiereSelected && i.Annee == AnneeSelect);
+            FicheAbsence.ItemsSource = tableQuery.Where(i => i.filier == filiereSelected && i.Annee == AnneeSelect);
             ValidationAbsences.IsEnabled = true;
         }
-        private void ViewCell_Tapped(object sender, EventArgs e)
+
+
+
+        private void SwitchCell_OnChanged(object sender, ToggledEventArgs e)
         {
-            if (lastCell != null)
-                lastCell.View.BackgroundColor = Color.Transparent;
-            var switchCell = sender as SwitchCell;
-            if (switchCell. != null)
+            var isAbsent = (SwitchCell)sender;
+            var student = (Etudiants)isAbsent.BindingContext;
+
+            if (isAbsent.On)
             {
-                viewCell.View.BackgroundColor = Color.Red;
-                lastCell = viewCell;
+                if (!EtudiansAbsent.Contains(student))
+                {
+                    student.NbrAbsence++;
+                    EtudiansAbsent.Add(student);
+                }
+            }
+            else
+            {
+                if (EtudiansAbsent.Contains(student))
+                {
+                    student.NbrAbsence--;
+                    EtudiansAbsent.Remove(student);
+                }
             }
         }
 
+        private void ValidationAbsences_Clicked(object sender, EventArgs e)
+        {
+            var db = new SQLiteConnection(dbPath);
+            Absence abs = new Absence()
+            {
+                nom_filiere = filiereAnne.SelectedItem.ToString(),
+                annee_filiere = AnnePicker.SelectedItem.ToString(),
+                nom_course = LessonPicker.SelectedItem.ToString(),
+                Date_courant = DateTime.Now,
+                students = EtudiansAbsent,
+
+            };
+            Absenc.SaveAbsence(abs);
+            DisplayAlert(null,"La liste d'absence est  bien enregistre", "ok");
+        }
     }
 }

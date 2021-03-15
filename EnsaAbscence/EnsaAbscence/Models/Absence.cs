@@ -16,7 +16,7 @@ namespace EnsaAbscence.Models
         public DateTime Date_courant { get; set; }    
         [TextBlob("studentsBlobbed")]
         public List<Etudiants> students { get; set; }
-        public override string ToString()
+        public  string Historique()
         {
             return nom_filiere + " " + nom_course +" "+ annee_filiere+" " + Date_courant;
         }
