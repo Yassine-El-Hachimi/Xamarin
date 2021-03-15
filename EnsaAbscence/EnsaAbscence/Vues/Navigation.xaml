@@ -4,7 +4,8 @@
              x:Class="EnsaAbscence.Navigation"
              xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
              BackgroundColor="#FFFFFF"
-             NavigationPage.HasNavigationBar="false">
+             NavigationPage.HasNavigationBar="True"
+             Title="Page d'acceuil">
     <ContentPage.Content>
         <StackLayout x:Name="mainContent">
             <Image x:Name="imageProfile" Source="ProfileBlack.png" Scale="0.4" Opacity="0.4" HeightRequest="200" WidthRequest="200" ></Image>
