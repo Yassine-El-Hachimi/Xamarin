@@ -19,6 +19,7 @@ namespace EnsaAbscence
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Absences : ContentPage
 	{
+        ViewCell lastCell;
         String filiereSelected;
         String AnneeSelect;
         int filiereID;
@@ -84,7 +85,17 @@ namespace EnsaAbscence
             FicheAbsence.ItemsSource= tableQuery.Where(i => i.filier == filiereSelected && i.Annee == AnneeSelect);
             ValidationAbsences.IsEnabled = true;
         }
+        private void ViewCell_Tapped(object sender, EventArgs e)
+        {
+            if (lastCell != null)
+                lastCell.View.BackgroundColor = Color.Transparent;
+            var switchCell = sender as SwitchCell;
+            if (switchCell. != null)
+            {
+                viewCell.View.BackgroundColor = Color.Red;
+                lastCell = viewCell;
+            }
+        }
 
-       
     }
 }

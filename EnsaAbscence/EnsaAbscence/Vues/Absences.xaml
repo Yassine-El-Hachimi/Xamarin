@@ -26,12 +26,12 @@
             <Picker BackgroundColor="Transparent" Margin="0,5,0,0" x:Name="LessonPicker" Title="Lesson" IsEnabled="False" SelectedIndexChanged="LessonPicker_SelectedIndexChanged" FontSize="16">
 
                 </Picker>
-            <Frame >
-                <ListView x:Name="FicheAbsence" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350">
+            <Frame BackgroundColor="Transparent" HasShadow="True" Padding="0" Margin="0">
+                <ListView x:Name="FicheAbsence" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" ItemTapped="ViewCell_Tapped">
                     <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <SwitchCell Text="{Binding details}"/>
-                    </DataTemplate>
+                        <DataTemplate>      
+                            <SwitchCell Text="{Binding details}"/>
+                        </DataTemplate>
                     </ListView.ItemTemplate>
                     
 
