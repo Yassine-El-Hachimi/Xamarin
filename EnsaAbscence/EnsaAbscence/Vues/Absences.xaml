@@ -33,10 +33,10 @@
                         <SwitchCell Text="{Binding details}"/>
                     </DataTemplate>
                     </ListView.ItemTemplate>
+                    
 
                 </ListView>
-
-            
+            <Button Text="Valider" IsEnabled="False" x:Name="ValidationAbsences"></Button>            
             
         </StackLayout>
     </ContentPage.Content>

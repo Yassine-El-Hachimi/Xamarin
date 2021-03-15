@@ -40,8 +40,9 @@ namespace EnsaAbscence
             Picker picker = (Picker)sender;
             filiereID = picker.SelectedIndex;
             filiereSelected = filiereAnne.SelectedItem.ToString();
-            AnnePicker.IsEnabled = true;
             AnnePicker.Items.Clear();
+            AnnePicker.IsEnabled = true;
+            
             switch (filiereID)
             {
                 case 0: AnnePicker.Items.Add("1 ere annee"); AnnePicker.Items.Add("2 eme annee"); break;
@@ -56,11 +57,13 @@ namespace EnsaAbscence
         private void AnnePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
             Picker picker = (Picker)sender;
-           // filiereID = picker.SelectedIndex;
-            AnneeSelect = AnnePicker.SelectedItem.ToString();
+           
             filiereSelected = filiereAnne.SelectedItem.ToString();
-            LessonPicker.IsEnabled = true;
+            AnneeSelect = AnnePicker.SelectedItem.ToString();
+            
             LessonPicker.Items.Clear();
+            LessonPicker.IsEnabled = true;
+           
             var db = new SQLiteConnection(dbPath);
             TableQuery<AddCourse> tableQuery = db.Table<AddCourse>();
             Module = tableQuery.Where(i =>i.CoursFiliere == filiereSelected && i.CoursAnnee==AnneeSelect).ToList();
@@ -79,7 +82,7 @@ namespace EnsaAbscence
             var db = new SQLiteConnection(dbPath);
             TableQuery<Etudiants> tableQuery = db.Table<Etudiants>();
             FicheAbsence.ItemsSource= tableQuery.Where(i => i.filier == filiereSelected && i.Annee == AnneeSelect);
-            
+            ValidationAbsences.IsEnabled = true;
         }
 
        

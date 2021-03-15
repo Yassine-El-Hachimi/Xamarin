@@ -19,6 +19,7 @@ namespace EnsaAbscence.Models
         public string Annee { get; set; }
         public int NbrAbsence { get; set; }
         public bool IsAbsent { get; set; }
+        public int NbrPresences { get; set; }
 
         public string details
         {

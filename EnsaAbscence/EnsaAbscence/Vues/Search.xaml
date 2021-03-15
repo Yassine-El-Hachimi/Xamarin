@@ -5,17 +5,27 @@
              xmlns:local="clr-namespace:EnsaAbscence"
 >
     <ContentPage.Content>
-        <StackLayout >
-            <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" Title="Filière">
+        <StackLayout x:Name="mainContent">
+            <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne"
+                        Title="Filière" SelectedIndexChanged="filiereAnne_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Cycle preparatoire</x:String>
+                    <x:String>Génie Informatique</x:String>
+                    <x:String>Génie Réseaux et Télécoms</x:String>
+                    <x:String>Génie Industriel</x:String>
+                    <x:String>Génie PMC</x:String>
+                </Picker.Items>
             </Picker>
-            <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" >
+
+            <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" SelectedIndexChanged="AnnePicker_SelectedIndexChanged">
 
             </Picker>
-            <local:myEntry x:Name="nomEtudiant" Placeholder="Nom Etudiant..."></local:myEntry>
-            <ListView x:Name="ListEtudiants">
+            
+            <local:myEntry x:Name="nomEtudiant" Placeholder="Nom Etudiant..." TextChanged="NomEtudiant_TextChanged"></local:myEntry>
+            <ListView x:Name="ListEtudiants" ItemSelected="ListEtudiants_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding .}"/>
+                        <TextCell Text="{Binding details}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
