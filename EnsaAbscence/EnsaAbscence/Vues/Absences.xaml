@@ -7,10 +7,10 @@
              NavigationPage.HasNavigationBar="True"
              Title="Absences">
     <ContentPage.Content>
-        <StackLayout  Margin="50,0,50,150" > 
+        <StackLayout  Margin="10,5,10,10" > 
             
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne"
-                        Title="Filière" SelectedIndexChanged="filiereAnne_SelectedIndexChanged">
+                <Picker BackgroundColor="Transparent" Margin="0,5,0,0"  x:Name="filiereAnne"
+                        Title="Filière" SelectedIndexChanged="filiereAnne_SelectedIndexChanged" FontSize="16">
                     <Picker.Items>
                         <x:String>Cycle preparatoire</x:String>
                         <x:String>Génie Informatique</x:String>
@@ -20,23 +20,24 @@
                     </Picker.Items>
                 </Picker>
 
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" SelectedIndexChanged="AnnePicker_SelectedIndexChanged">
+            <Picker BackgroundColor="Transparent" Margin="0,5,0,0" x:Name="AnnePicker" Title="Annee" IsEnabled="False" SelectedIndexChanged="AnnePicker_SelectedIndexChanged" FontSize="16">
 
                 </Picker>
-                <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="LessonPicker" Title="Lesson" IsEnabled="False" SelectedIndexChanged="LessonPicker_SelectedIndexChanged">
+            <Picker BackgroundColor="Transparent" Margin="0,5,0,0" x:Name="LessonPicker" Title="Lesson" IsEnabled="False" SelectedIndexChanged="LessonPicker_SelectedIndexChanged" FontSize="16">
 
                 </Picker>
-                
-                <ListView x:Name="FicheAbsence" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Frame >
+                <ListView x:Name="FicheAbsence" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350">
                     <ListView.ItemTemplate>
-                        <DataTemplate>
+                    <DataTemplate>
                         <SwitchCell Text="{Binding details}"/>
                     </DataTemplate>
                     </ListView.ItemTemplate>
                     
 
                 </ListView>
-            <Button Text="Valider" IsEnabled="False" x:Name="ValidationAbsences"></Button>            
+            </Frame>
+            <Button Text="Valider" BackgroundColor="#36BEF0" TextColor="#ffffff" IsEnabled="False" x:Name="ValidationAbsences"></Button>            
             
         </StackLayout>
     </ContentPage.Content>
