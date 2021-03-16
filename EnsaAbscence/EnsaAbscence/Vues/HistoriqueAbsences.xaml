@@ -7,7 +7,7 @@
             <ListView x:Name="HistoriqueAbs" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <SwitchCell Text=""/>
+                        <SwitchCell Text="{Binding Historique}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
 

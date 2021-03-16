@@ -18,7 +18,7 @@ namespace EnsaAbscence.Models
         public List<Etudiants> students { get; set; }
         public  string Historique()
         {
-            return nom_filiere + " " + nom_course +" "+ annee_filiere+" " + Date_courant;
+            return nom_filiere + " " + nom_course;
         }
     }
 }
