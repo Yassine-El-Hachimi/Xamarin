@@ -56,9 +56,9 @@ namespace EnsaAbscence.Vues
         private void HistoAb_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             Absence abs = HistoAb.SelectedItem as Absence;
-            AffichageAbs.ItemsSource = abs.students;
-     
-
+            var db = new SQLiteConnection(dbPath);
+            TableQuery<Etudiants> tableQuery = db.Table<Etudiants>();
+            AffichageAbs.ItemsSource = tableQuery.Where(i => i.filier==abs.nom_filiere && i.NbrAbsence>0).ToList();
         }
     }
 }

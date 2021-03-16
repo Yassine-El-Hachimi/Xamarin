@@ -131,8 +131,8 @@ namespace EnsaAbscence
                 nom_filiere = filiereAnne.SelectedItem.ToString(),
                 annee_filiere = AnnePicker.SelectedItem.ToString(),
                 nom_course = LessonPicker.SelectedItem.ToString(),
-                Date = DateTime.Now,
-                students = EtudiansAbsent
+                Date = DateTime.Now,         
+                 students = new List<Etudiants>(EtudiansAbsent)
             };
             Absenc.SaveAbsence(abs);
             DisplayAlert(null, "La liste d'absence est  bien enregistre", "ok");
