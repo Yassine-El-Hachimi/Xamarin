@@ -10,20 +10,29 @@ namespace EnsaAbscence.ModelControllers
 {
     class ControllerAbsence
     {
-        public SQLiteAsyncConnection con;
+        public SQLiteConnection con;
         string dbPath = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "GestionAbsences.db3");
         // creation de la table user
         public ControllerAbsence()
         {
-            con = new SQLiteAsyncConnection(dbPath);
-            con.CreateTableAsync<Absence>();
+            con = new SQLiteConnection(dbPath);
+            con.CreateTable<Absence>();
         }
 
-        public  Task SaveAbsence(Absence Abs)
+      
+
+        public int SaveAbsence(Absence Abs)
         {
-            return con.InsertAsync(Abs);
+            if (Abs.id_absence != 0)
+            {
+                return con.Update(Abs);
+            }
+            else
+            {
+                return con.Insert(Abs);
+            }
         }
 
-        
+
     }
 }
