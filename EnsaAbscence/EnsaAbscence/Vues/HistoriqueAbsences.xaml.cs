@@ -55,12 +55,13 @@ namespace EnsaAbscence.Vues
 
         private void HistoAb_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Absence abs = HistoAb.SelectedItem as Absence;
-            List<Etudiants> etudiantsAbs = new List<Etudiants>(abs.students);
+            Absence abs = (Absence)HistoAb.SelectedItem;
+            List<Etudiants> etudiantsAbs = new List<Etudiants>();
+            etudiantsAbs = abs.students;
             var db = new SQLiteConnection(dbPath);
             TableQuery<Etudiants> tableQuery = db.Table<Etudiants>();
             List<Etudiants> AllStudents = tableQuery.Where(i => i.filier == abs.nom_filiere && i.Annee == abs.annee_filiere).ToList<Etudiants>();
-            AffichageAbs.ItemsSource = AllStudents;
+            AffichageAbs.ItemsSource = etudiantsAbs;
      
 
         }
