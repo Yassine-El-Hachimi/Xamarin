@@ -34,7 +34,7 @@
                     <ListView x:Name="FicheAbsence" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" >
                     <ListView.ItemTemplate>
                         <DataTemplate>      
-                            <SwitchCell Text="{Binding details}"/>
+                            <SwitchCell Text="{Binding details}" OnChanged="SwitchCell_OnChanged"/>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                     

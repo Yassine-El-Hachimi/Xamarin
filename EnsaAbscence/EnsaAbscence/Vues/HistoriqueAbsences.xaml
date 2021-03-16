@@ -5,7 +5,7 @@
              x:Class="EnsaAbscence.Vues.HistoriqueAbsences">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="HistoAb" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
+            <ListView x:Name="HistoAb" ItemSelected="HistoAb_ItemSelected"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -14,6 +14,13 @@
                             <Label Text="{Binding Date}" FontSize="12"/>
                         </StackLayout>
                         </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView x:Name="AffichageAbs" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <SwitchCell Text="{Binding details}" />
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
