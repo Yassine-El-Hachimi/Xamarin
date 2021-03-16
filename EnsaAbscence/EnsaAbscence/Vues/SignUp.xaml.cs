@@ -8,6 +8,7 @@ using EnsaAbscence.Models;
 using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XLabs.Forms.Controls;
 
 namespace EnsaAbscence
 {
@@ -17,6 +18,7 @@ namespace EnsaAbscence
         UserRepository usr;
         public Page1 ()
 		{
+            
             usr = new UserRepository();
             InitializeComponent ();
             SignUpButton.Clicked += SignUpButton_Clicked;
@@ -40,7 +42,8 @@ namespace EnsaAbscence
                             usr.SaveProffesseur(prof);
                             await DisplayAlert(null, prof.Nom + " bien enregistre", "ok");
                         //direction sur la bonne page
-
+                            await Navigation.PushAsync(new MainPage(), true);
+                            
                     }
                     else
                     {
@@ -69,9 +72,6 @@ namespace EnsaAbscence
             await Navigation.PopAsync(true);
         }
 
-        private async void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Navigation(),true);
-        }
+       
     }
 }

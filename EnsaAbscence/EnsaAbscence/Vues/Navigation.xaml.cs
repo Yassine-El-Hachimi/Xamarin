@@ -14,6 +14,7 @@ namespace EnsaAbscence
 	{
 		public Navigation ()
 		{
+            
 			InitializeComponent ();
 		}
         private async void backButton_OnClicked(object sender, EventArgs e)

@@ -4,22 +4,36 @@
              xmlns:local="clr-namespace:EnsaAbscence"
              x:Class="EnsaAbscence.Page1"
              BackgroundImage="bckgr2.png"
-              NavigationPage.HasNavigationBar="false">
+              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             NavigationPage.HasNavigationBar="False"
+            >
     <ContentPage.Content>
         <StackLayout>
 
             <ImageButton Source="backButton.png" BackgroundColor="Transparent"  HorizontalOptions="StartAndExpand" Margin="5,10,0,0" Clicked="backButton_OnClicked"></ImageButton>
-            <StackLayout Margin="30,40,0,0">
+            <StackLayout Margin="30,20,0,0">
                 <Label Text="Create" FontSize="48" Opacity="1" TextColor="White" FontFamily="Ruda-Regular.ttf#Ruda-Regular"></Label>
                 <StackLayout Padding="0,-30,0,0">
                     <Label Text="Account" FontSize="48" Opacity="1" TextColor="White"></Label>
                 </StackLayout>
             </StackLayout>
-            <local:myEntryWhite x:Name="nomEntry" Placeholder="Nom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,30,25,0" Opacity="0.6" ></local:myEntryWhite>
-            <local:myEntryWhite x:Name="prenomEntry" Placeholder="Prenom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,15,25,0" Opacity="0.6"></local:myEntryWhite>
-            <local:myEntryWhite x:Name="passwordEntry" Placeholder="password" IsPassword="True" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,15,25,0" Opacity="0.6"></local:myEntryWhite>
-            <Label Text="Choisir Vos Filieres "
-            <ImageButton x:Name="SignUpButton" Source="Valider.png" Margin="300,30,20,0" Clicked="ImageButton_Clicked" ></ImageButton>
+            <local:myEntryWhite x:Name="nomEntry" Placeholder="Nom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,10,25,0" Opacity="0.6"></local:myEntryWhite>
+            <local:myEntryWhite x:Name="prenomEntry" Placeholder="Prenom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,9,25,0" Opacity="0.6"></local:myEntryWhite>
+            <local:myEntryWhite x:Name="passwordEntry" Placeholder="password" IsPassword="True" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,9,25,0" Opacity="0.6"></local:myEntryWhite>
+            <Frame Margin="25,5,185,0" BackgroundColor="White" Padding="5,5,5,5" CornerRadius="5">
+            <Label Text="Choisir vos filieres " FontAttributes="Bold" TextColor="Gray" FontSize="14" Margin="0"></Label>
+            </Frame>
+            <Frame BorderColor="White" CornerRadius="8" BackgroundColor="Transparent" Padding="2,5,5,5" Margin="25,0,50,0" >
+            <StackLayout>
+                <controls:CheckBox x:Name="Filiere1ch"  DefaultText="Cycle preparatoire" />
+                <controls:CheckBox  x:Name="Filiere2ch" DefaultText="Génie Informatique" />
+                <controls:CheckBox  x:Name="Filiere3ch"  DefaultText="Génie Réseaux et Télécoms" />
+                <controls:CheckBox  x:Name="Filiere4ch"  DefaultText="Génie Industriel" />
+                <controls:CheckBox  x:Name="Filiere5ch"  DefaultText="Génie PMC" />
+            </StackLayout>
+            </Frame>
+
+            <ImageButton x:Name="SignUpButton" Source="Valider.png" Margin="300,30,20,0"  ></ImageButton>
 
         </StackLayout>
     </ContentPage.Content>
