@@ -40,14 +40,13 @@ namespace EnsaAbscence
                     if (!String.IsNullOrWhiteSpace(prof.Pass) && prof.Pass.Length >4)
                     {
                             usr.SaveProffesseur(prof);
-                            await DisplayAlert(null, prof.Nom + " bien enregistre", "ok");
                         //direction sur la bonne page
                             await Navigation.PushAsync(new MainPage(), true);
                             
                     }
                     else
                     {
-                        await DisplayAlert("Erreur de saisie", "le password doit avoir plus de 3 caracteres", "OK");
+                        await DisplayAlert("Erreur de saisie", "le password doit avoir plus de 4 caracteres", "OK");
                     }
 
                 }
