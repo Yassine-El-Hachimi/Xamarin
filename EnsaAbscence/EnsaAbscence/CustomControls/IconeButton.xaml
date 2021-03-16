@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+x:Class="EnsaAbscence.CustomControls.IconeButton">
+    <ContentView.Content>
+        <Frame CornerRadius="5" x:Name="myFrame" HorizontalOptions="StartAndExpand" VerticalOptions="Start" Margin="5" BackgroundColor="Transparent" HasShadow="True" Padding="10,10,10,10">
+
+            <StackLayout Orientation="Vertical" x:Name="stack">
+                <Image x:Name="btnIcon" HeightRequest="25" WidthRequest="25" HorizontalOptions="Center"  Opacity="1"/>
+            </StackLayout>
+        </Frame>
+    </ContentView.Content>
+</ContentView>

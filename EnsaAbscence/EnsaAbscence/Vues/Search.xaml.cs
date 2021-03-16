@@ -25,6 +25,7 @@ namespace EnsaAbscence.Vues
         public Search ()
 		{
 			InitializeComponent ();
+            
         }
         private void filiereAnne_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,9 +75,31 @@ namespace EnsaAbscence.Vues
         private void ListEtudiants_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var etud = ListEtudiants.SelectedItem as Etudiants;
-            etudInfos.Children.Clear();
-            etudInfos.Children.Add( new Label() { Text = "Nombre Absences : " + etud.NbrAbsence.ToString() });
-            etudInfos.Children.Add(new Label() { Text = "Nombre Presences : " + etud.NbrPresences.ToString() });
+
+            nbrAbsLabl.Text = "Nombre \nAbsences : \n" + etud.NbrAbsence.ToString();
+            nbrPrsLabl.Text = "Nombre \nPresences : \n" + etud.NbrPresences.ToString();
+            
+        }
+        //Navigation
+        private async void backButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync(true);
+        }
+        private async void boutonAbsence_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAbsences(), true);
+        }
+        private async void boutonSearch_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Search(), true);
+        }
+        private async void boutonLesson_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddLesson(), true);
+        }
+        private async void boutonStudent_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Etudiant(), true);
         }
     }
     

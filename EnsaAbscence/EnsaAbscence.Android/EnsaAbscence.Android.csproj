@@ -66,6 +66,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomPickerRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="myEntryRenderer.cs" />
     <Compile Include="myEntryRendererWhite.cs" />

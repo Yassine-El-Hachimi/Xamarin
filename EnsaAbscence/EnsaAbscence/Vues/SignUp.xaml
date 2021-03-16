@@ -18,6 +18,7 @@
             <local:myEntryWhite x:Name="nomEntry" Placeholder="Nom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,30,25,0" Opacity="0.6" ></local:myEntryWhite>
             <local:myEntryWhite x:Name="prenomEntry" Placeholder="Prenom" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,15,25,0" Opacity="0.6"></local:myEntryWhite>
             <local:myEntryWhite x:Name="passwordEntry" Placeholder="password" IsPassword="True" FontSize="14" TextColor="White" PlaceholderColor="White" Margin="25,15,25,0" Opacity="0.6"></local:myEntryWhite>
+            <Label Text="Choisir Vos Filieres "
             <ImageButton x:Name="SignUpButton" Source="Valider.png" Margin="300,30,20,0" Clicked="ImageButton_Clicked" ></ImageButton>
 
         </StackLayout>

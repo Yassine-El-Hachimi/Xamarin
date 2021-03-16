@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
-             x:Class="EnsaAbscence.Vues.MenuAbsences">
+             x:Class="EnsaAbscence.Vues.MenuAbsences"
+             Title="Menu Absences">
     <ContentPage.Content>
         <StackLayout>
             <Grid Margin="0" Padding="0" HorizontalOptions="Center" VerticalOptions="FillAndExpand">
@@ -11,6 +12,12 @@
                 <local:NavigationButton x:Name="MarquerAbsences" Text="  Maquer Absences  " Image="ClockWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0" Clicked="marquerAbsc" VerticalOptions="EndAndExpand"></local:NavigationButton>
                 <local:NavigationButton x:Name="HistoriqueABsences" Text="Historique Absences  " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="1" Clicked="HistoriqueAbs"></local:NavigationButton>
 
+            </Grid>
+            <Grid BackgroundColor="#36BEF0" Margin="0" Padding="5,5,5,5" VerticalOptions="EndAndExpand">
+             
+                <local:IconeButton Image="StudentWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="0" HorizontalOptions="Center" Clicked="boutonStudent_Clicked"></local:IconeButton>
+                <local:IconeButton Image="LessonWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="1" HorizontalOptions="Center" Clicked="boutonLesson_Clicked"></local:IconeButton>
+                <local:IconeButton Image="Loupe.png" FrameBackgroundColor="#00ffffff" Grid.Column="2" HorizontalOptions="Center" Clicked="boutonSearch_Clicked"></local:IconeButton>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

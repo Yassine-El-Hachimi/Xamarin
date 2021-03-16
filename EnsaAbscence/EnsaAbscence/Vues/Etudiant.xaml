@@ -2,42 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EnsaAbscence.Vues.Etudiant"
-             xmlns:local="clr-namespace:EnsaAbscence"
+             xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
+             xmlns:control="clr-namespace:EnsaAbscence"
              Title="Ajouter un(e) etudiant(e)"
              NavigationPage.HasNavigationBar="True"
           
              >
     <ContentPage.Content>
+        <StackLayout>
         <ScrollView>
             <StackLayout x:Name="MainLayout">
                 <StackLayout Padding="30,50,30,0">
-                    <local:myEntry BackgroundColor="Transparent" x:Name="cne" Keyboard="Numeric"  Placeholder="Entrer le CNE..." />
-                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="prenom" Placeholder="Entrer le prénom..." />
-                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="nom" Placeholder="Entrer le nom..." />
-                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="email" Keyboard="Email" Placeholder="Entrer l'email..." />
-                    <local:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="numero" Keyboard="Telephone" Placeholder="Entrer le numéro de téléphone..." />
-                    <Picker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" SelectedIndexChanged="filiereText_SelectedIndexChanged"
-                        Title="Filière">
-                        <Picker.Items>
-                            <x:String>Cycle preparatoire </x:String>
-                            <x:String>Génie Informatique</x:String>
-                            <x:String>Génie Réseaux et Télécoms</x:String>
-                            <x:String>Génie Industriel</x:String>
-                            <x:String>Génie PMC</x:String>
-                        </Picker.Items>
-                    </Picker>
+                    <control:myEntry BackgroundColor="Transparent" x:Name="cne" Keyboard="Numeric"  Placeholder="Entrer le CNE..." FontSize="14"/>
+                        <control:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="prenom" Placeholder="Entrer le prénom..." FontSize="14"/>
+                        <control:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="nom" Placeholder="Entrer le nom..." FontSize="14"/>
+                        <control:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="email" Keyboard="Email" Placeholder="Entrer l'email..." FontSize="14"/>
+                        <control:myEntry BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="numero" Keyboard="Telephone" Placeholder="Entrer le numéro de téléphone..." FontSize="14"/>
+                        <Frame BackgroundColor="Transparent" CornerRadius="50" Padding="10,0,10,0" Margin="0,5,0,5" BorderColor="Black">
+                            <local:CustomPicker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" SelectedIndexChanged="filiereText_SelectedIndexChanged"
+                        Title="Filière" FontSize="14">
+                                <Picker.Items>
+                                    <x:String>Cycle preparatoire</x:String>
+                                    <x:String>Génie Informatique</x:String>
+                                    <x:String>Génie Réseaux et Télécoms</x:String>
+                                    <x:String>Génie Industriel</x:String>
+                                    <x:String>Génie PMC</x:String>
+                                </Picker.Items>
+                            </local:CustomPicker>
+                        </Frame>
+                        <Frame BackgroundColor="Transparent" CornerRadius="50" Padding="10,0,10,0" Margin="0,5,0,5" BorderColor="Black">
+                            <local:CustomPicker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" FontSize="14">
 
-                    <Picker BackgroundColor="Transparent" Margin="0,5,0,5" x:Name="AnnePicker" Title="Annee" IsEnabled="False" >
-
-                    </Picker>
-                    <Button
-                        Margin="0,20,0,40"
-                        HeightRequest="55"
-                        BackgroundColor="#4d4dff"
+                            </local:CustomPicker>
+                        </Frame>
+                        <Button
+                       
+                        BackgroundColor="#36BEF0" TextColor="#ffffff"
                         Clicked="Button_Clicked"
                         Text="Ajouter Etudiant" />
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+            <Grid BackgroundColor="#36BEF0" Margin="0" Padding="5,5,5,5" VerticalOptions="EndAndExpand">
+                <local:IconeButton Image="ClockWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="0" HorizontalOptions="Center" Clicked="boutonAbsence_Clicked"></local:IconeButton>
+                <local:IconeButton Image="LessonWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="1" HorizontalOptions="Center" Clicked="boutonLesson_Clicked"></local:IconeButton>
+                <local:IconeButton Image="Loupe.png" FrameBackgroundColor="#00ffffff" Grid.Column="2" HorizontalOptions="Center" Clicked="boutonSearch_Clicked"></local:IconeButton>
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -10,15 +10,15 @@ namespace EnsaAbscence.Models
     {
         [PrimaryKey, AutoIncrement]
         public int id_absence{ get; set; }
-        public String nom_course { get; set; }
-        public String nom_filiere { get; set; }
-        public String annee_filiere { get; set; } 
-        public DateTime Date_courant { get; set; }    
+        public string nom_course { get; set; }
+        public string nom_filiere { get; set; }
+        public string annee_filiere { get; set; } 
+        public DateTime Date { get; set; }
         [TextBlob("studentsBlobbed")]
         public List<Etudiants> students { get; set; }
-        public  string Historique()
+        public  string ListerAbsences
         {
-            return nom_filiere + " " + nom_course;
+            get{ return $"{nom_filiere} {nom_course}"; }
         }
     }
 }

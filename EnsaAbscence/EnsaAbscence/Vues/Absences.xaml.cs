@@ -1,5 +1,6 @@
 ﻿using EnsaAbscence.ModelControllers;
 using EnsaAbscence.Models;
+using EnsaAbscence.Vues;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -117,18 +118,46 @@ namespace EnsaAbscence
 
         private void ValidationAbsences_Clicked(object sender, EventArgs e)
         {
+           
+           
+        }
+
+        private void ValidationAbsences_Clicked_1(object sender, EventArgs e)
+        {
+           
             var db = new SQLiteConnection(dbPath);
             Absence abs = new Absence()
             {
                 nom_filiere = filiereAnne.SelectedItem.ToString(),
                 annee_filiere = AnnePicker.SelectedItem.ToString(),
                 nom_course = LessonPicker.SelectedItem.ToString(),
-                Date_courant = DateTime.Now,
-                students = EtudiansAbsent,
+                Date = DateTime.Now,
+                students = new List<Etudiants>(EtudiansAbsent),
 
             };
             Absenc.SaveAbsence(abs);
-            DisplayAlert(null,"La liste d'absence est  bien enregistre", "ok");
+            DisplayAlert(null, "La liste d'absence est  bien enregistre", "ok");
+        }
+        //Navigation
+        private async void backButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync(true);
+        }
+        private async void boutonAbsence_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MenuAbsences(), true);
+        }
+        private async void boutonSearch_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Search(), true);
+        }
+        private async void boutonLesson_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddLesson(), true);
+        }
+        private async void boutonStudent_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Etudiant(), true);
         }
     }
 }

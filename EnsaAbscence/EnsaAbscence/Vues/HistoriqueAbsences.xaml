@@ -1,18 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
              x:Class="EnsaAbscence.Vues.HistoriqueAbsences">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="HistoriqueAbs" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350">
+            <ListView x:Name="HistoAb" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <SwitchCell Text="{Binding Historique}"/>
+                        <ViewCell>
+                        <StackLayout Padding="5,5,5,5">
+                            <Label Text="{Binding ListerAbsences}" TextColor="#36BEF0" FontSize="16"/>
+                            <Label Text="{Binding Date}" FontSize="12"/>
+                        </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
-
             </ListView>
+            <Grid BackgroundColor="#36BEF0" Margin="0" Padding="5,5,5,5" VerticalOptions="EndAndExpand">
+                <local:IconeButton Image="ClockWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="0" HorizontalOptions="Center" Clicked="boutonAbsence_Clicked"></local:IconeButton>
+                <local:IconeButton Image="StudentWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="1" HorizontalOptions="Center" Clicked="boutonStudent_Clicked"></local:IconeButton>
+                <local:IconeButton Image="LessonWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="2" HorizontalOptions="Center" Clicked="boutonLesson_Clicked"></local:IconeButton>
+                <local:IconeButton Image="Loupe.png" FrameBackgroundColor="#00ffffff" Grid.Column="3" HorizontalOptions="Center" Clicked="boutonSearch_Clicked"></local:IconeButton>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

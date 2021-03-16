@@ -17,9 +17,9 @@ namespace EnsaAbscence.Models
         public string numero { get; set; }
         public string filier { get; set; }
         public string Annee { get; set; }
-        public int NbrAbsence { get; set; }
+        public int NbrAbsence { get; set; } = 0;
         public bool IsAbsent { get; set; }
-        public int NbrPresences { get; set; }
+        public int NbrPresences { get; set; } = 0;
 
         public string details
         {
