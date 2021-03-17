@@ -12,6 +12,7 @@ namespace EnsaAbscence.Models
         public string Nom { get; set; }
         public string Prenom { get; set; }
         public string Pass { get; set; }
-        
+        public string filiere { get; set; }
+
     }
 }
