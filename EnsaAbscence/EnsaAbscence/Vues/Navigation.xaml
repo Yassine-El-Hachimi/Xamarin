@@ -14,12 +14,12 @@
                     
                     
                     <local:NavigationButton x:Name="boutonAbsences" Text="  Absences  " Image="ClockWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="1" Clicked="boutonAbsence_Clicked"></local:NavigationButton>
-                    <local:NavigationButton x:Name="boutonLessons" Text="Add lesson  " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="1" Grid.Row="1" Clicked="boutonLesson_Clicked"></local:NavigationButton>
+                    <local:NavigationButton x:Name="boutonLessons" Text="   Leçons     " Image="LessonClass.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="1" Grid.Row="1" Clicked="boutonLesson_Clicked"></local:NavigationButton>
                
             </Grid>
             <Grid Margin="0" Padding="0" HorizontalOptions="Center">
-                    <local:NavigationButton x:Name="boutonSearch" Text="    Search     " Image="Loupe.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0" Clicked="boutonSearch_Clicked"></local:NavigationButton>
-                    <local:NavigationButton x:Name="boutonStudent" Text="Add Student " Image="StudentWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center"  Margin="0" Grid.Column="1" Grid.Row="0" Clicked="boutonStudent_Clicked"></local:NavigationButton>
+                    <local:NavigationButton x:Name="boutonSearch" Text="Recherche  " Image="Loupe.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center" Margin="0" Grid.Column="0" Grid.Row="0" Clicked="boutonSearch_Clicked"></local:NavigationButton>
+                    <local:NavigationButton x:Name="boutonStudent" Text="   Etudiant   "  Image="StudentWhite.png" TextColor="#ffffff" FrameBackgroundColor="#36BEF0" HorizontalOptions="Center"  Margin="0" Grid.Column="1" Grid.Row="0" Clicked="boutonStudent_Clicked"></local:NavigationButton>
                    
                 </Grid>
             </StackLayout>

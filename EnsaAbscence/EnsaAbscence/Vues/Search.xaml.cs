@@ -76,8 +76,7 @@ namespace EnsaAbscence.Vues
         {
             var etud = ListEtudiants.SelectedItem as Etudiants;
 
-            nbrAbsLabl.Text = "Nombre \nAbsences : \n" + etud.NbrAbsence.ToString();
-            nbrPrsLabl.Text = "Nombre \nPresences : \n" + etud.NbrPresences.ToString();
+            nbrAbsLabl.Text = etud.NbrAbsence.ToString();
             
         }
         //Navigation

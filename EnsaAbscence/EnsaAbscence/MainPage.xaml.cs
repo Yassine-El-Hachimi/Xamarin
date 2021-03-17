@@ -33,12 +33,15 @@ namespace EnsaAbscence
             pr=usr.VerfierLog(ouarrachi);
             if (pr != null)
             {
-                await DisplayAlert(null, "bien authentifié", "ok");
+                nomEtry.Text = "";
+                passwordEntry.Text = "";
                 await Navigation.PushAsync(new Navigation(), true);
             }
             else
             {
                 await DisplayAlert(null, "Black hacker", "ok");
+                nomEtry.Text = "";
+                passwordEntry.Text = "";
             }
         }
        

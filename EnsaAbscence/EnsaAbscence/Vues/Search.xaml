@@ -29,10 +29,10 @@
                     <control:myEntry x:Name="nomEtudiant" Placeholder="Nom Etudiant..." TextChanged="NomEtudiant_TextChanged" FontSize="14" Margin="10,0,10,0"></control:myEntry>
                 
                 <Frame  HasShadow="True" Padding="0" Margin="0" BackgroundColor="#3336BEF0" CornerRadius="8">
-                    <ListView x:Name="ListEtudiants" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" ItemSelected="ListEtudiants_ItemSelected">
+                    <ListView x:Name="ListEtudiants" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" ItemSelected="ListEtudiants_ItemSelected">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <SwitchCell Text="{Binding details}"/>
+                                <TextCell Text="{Binding details}"/>
                             </DataTemplate>
                         </ListView.ItemTemplate>
 
@@ -40,20 +40,11 @@
                     </ListView>
                 </Frame>
                 <Grid x:Name="etudInfos" VerticalOptions="EndAndExpand">
-                    <Label x:Name="nbrAbsLabl" Grid.Column="0" Grid.Row="0" FontSize="15" LineHeight="0.4"  >
-                        <Label.Text>
-                                Nombre
-                            Absences :
-                            0
-                        </Label.Text>
-                    </Label>
-                    <Label x:Name="nbrPrsLabl"  Grid.Column="1" Grid.Row="0" FontSize="15" LineHeight="0.4" >
-                        <Label.Text>
-                          Nombre
-                          Presences :
-                            ?
-                        </Label.Text>
-                    </Label>
+                    <Frame BackgroundColor="#B40800" Grid.Column="0" Grid.Row="0" HorizontalOptions="Fill" Padding="15,15,15,15" CornerRadius="5">
+                        <Label x:Name="nbrAbsLabl" Text="Nombre Absences  "  FontSize="14" TextColor="White" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+
+                    </Frame>
+                    
                 </Grid>
             </StackLayout>
             <Grid BackgroundColor="#36BEF0" Margin="0" Padding="5,5,5,5" VerticalOptions="EndAndExpand">

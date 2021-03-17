@@ -8,7 +8,7 @@
              Title="Ajouter un Module">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="30,50,30,0">
+            <StackLayout  VerticalOptions="CenterAndExpand" Margin="50,80,50,0">
                 <control:myEntry BackgroundColor="Transparent" x:Name="NomModule"  Placeholder="Nom Module..." FontSize="14"/>
                 <Frame BackgroundColor="Transparent" CornerRadius="50" Padding="10,0,10,0" Margin="5,5,5,5" BorderColor="Black">
                     <local:CustomPicker BackgroundColor="Transparent" Margin="0,5,0,5"  x:Name="filiereAnne" FontSize="14" Title="Filière" SelectedIndexChanged="filiereAnne_SelectedIndexChanged">

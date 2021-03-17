@@ -4,7 +4,7 @@
              x:Class="EnsaAbscence.Absences"
              xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
              NavigationPage.HasNavigationBar="True"
-             Title="Absences">
+             Title="Marquer Absences">
     <ContentPage.Content>
         <StackLayout>
         <StackLayout  Margin="10,5,10,10" >

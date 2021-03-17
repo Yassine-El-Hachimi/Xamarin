@@ -43,9 +43,9 @@ namespace EnsaAbscence
             Picker picker = (Picker)sender;
             filiereID = picker.SelectedIndex;
             filiereSelected = filiereAnne.SelectedItem.ToString();
-            AnnePicker.Items.Clear();
+            
             AnnePicker.IsEnabled = true;
-
+            AnnePicker.Items.Clear();
             switch (filiereID)
             {
                 case 0: AnnePicker.Items.Add("1 ere annee"); AnnePicker.Items.Add("2 eme annee"); break;
@@ -101,6 +101,7 @@ namespace EnsaAbscence
                 if (!EtudiansAbsent.Contains(student))
                 {
                     student.NbrAbsence++;
+                   
                     EtudiansAbsent.Add(student);
                     db.Update(student);
                 }
@@ -110,6 +111,7 @@ namespace EnsaAbscence
                 if (EtudiansAbsent.Contains(student))
                 {
                     student.NbrAbsence--;
+                    
                     EtudiansAbsent.Remove(student);
                     db.Update(student);
                 }
@@ -132,9 +134,10 @@ namespace EnsaAbscence
                 annee_filiere = AnnePicker.SelectedItem.ToString(),
                 nom_course = LessonPicker.SelectedItem.ToString(),
                 Date = DateTime.Now,
-                students = EtudiansAbsent
+                students = new List<Etudiants>(EtudiansAbsent)
             };
             Absenc.SaveAbsence(abs);
+
             DisplayAlert(null, "La liste d'absence est  bien enregistre", "ok");
         }
         //Navigation

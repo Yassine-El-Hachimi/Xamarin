@@ -2,28 +2,33 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:EnsaAbscence.CustomControls"
-             x:Class="EnsaAbscence.Vues.HistoriqueAbsences">
+             x:Class="EnsaAbscence.Vues.HistoriqueAbsences"
+             Title="Historique Absences">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="HistoAb" ItemSelected="HistoAb_ItemSelected"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                        <StackLayout Padding="5,5,5,5">
-                            <Label Text="{Binding ListerAbsences}" TextColor="#36BEF0" FontSize="16"/>
-                            <Label Text="{Binding Date}" FontSize="12"/>
-                        </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <ListView x:Name="AffichageAbs" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <SwitchCell Text="{Binding details}" />
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <Frame  HasShadow="True" Padding="0" Margin="0" BackgroundColor="White">
+                <ListView x:Name="HistoAb" ItemSelected="HistoAb_ItemSelected"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="5,5,5,5">
+                                    <Label Text="{Binding ListerAbsences}" TextColor="#36BEF0" FontSize="16"/>
+                                    <Label Text="{Binding Date}" FontSize="12"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
+            <Frame  HasShadow="True" Padding="0" Margin="10,5,10,5" BackgroundColor="#3336BEF0" CornerRadius="8">
+                <ListView x:Name="AffichageAbs" Style="myTheme" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" HeightRequest="350" SeparatorVisibility="Default" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding details}" Detail="{Binding NbrAbsence}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Frame>
             <Grid BackgroundColor="#36BEF0" Margin="0" Padding="5,5,5,5" VerticalOptions="EndAndExpand">
                 <local:IconeButton Image="ClockWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="0" HorizontalOptions="Center" Clicked="boutonAbsence_Clicked"></local:IconeButton>
                 <local:IconeButton Image="StudentWhite.png" FrameBackgroundColor="#00ffffff" Grid.Column="1" HorizontalOptions="Center" Clicked="boutonStudent_Clicked"></local:IconeButton>

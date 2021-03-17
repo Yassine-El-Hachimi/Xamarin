@@ -20,6 +20,7 @@ namespace EnsaAbscence
         private async void backButton_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync(true);
+            
         }
         private async void boutonAbsence_Clicked(object sender, EventArgs e)
         {

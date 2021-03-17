@@ -6,6 +6,7 @@
              BackgroundImage="bckgr2.png"
               xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              NavigationPage.HasNavigationBar="False"
+             Style="Sencondarytheme"
             >
     <ContentPage.Content>
         <StackLayout>
@@ -23,9 +24,9 @@
             <Frame Margin="25,5,185,0" BackgroundColor="White" Padding="5,5,5,5" CornerRadius="5">
             <Label Text="Choisir vos filieres " FontAttributes="Bold" TextColor="Gray" FontSize="14" Margin="0"></Label>
             </Frame>
-            <Frame BorderColor="White" CornerRadius="8" BackgroundColor="Transparent" Padding="2,5,5,5" Margin="25,0,50,0" >
+            <Frame  BorderColor="White" CornerRadius="8" BackgroundColor="Transparent" Padding="2,5,5,5" Margin="25,0,50,0" >
             <StackLayout>
-                <controls:CheckBox x:Name="Filiere1ch"  DefaultText="Cycle preparatoire" />
+                    <controls:CheckBox x:Name="Filiere1ch"  DefaultText="Cycle preparatoire" />
                 <controls:CheckBox  x:Name="Filiere2ch" DefaultText="Génie Informatique" />
                 <controls:CheckBox  x:Name="Filiere3ch"  DefaultText="Génie Réseaux et Télécoms" />
                 <controls:CheckBox  x:Name="Filiere4ch"  DefaultText="Génie Industriel" />
